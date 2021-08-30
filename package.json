@@ -6,7 +6,7 @@
     "scripts": {
         "extract-abi": "truffle-export-abi -d ./build/contracts/ -o ./abi.json -v",
         "test": "truffle test",
-        "test:test": "node tests/test.js",
+        "test:details": "node tests/details.js",
         "test:mint": "node tests/mint.js",
         "test:burn": "node tests/burn.js",
         "test:transfer": "node tests/transfer.js",
