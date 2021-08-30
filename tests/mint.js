@@ -11,7 +11,7 @@ async function main() {
         const configs = JSON.parse(fs.readFileSync('./configs/' + argv._ + '.json').toString())
         const provider = new HDWalletProvider(
             configs.owner_mnemonic,
-            "http://localhost:7545"
+            configs.provider
         );
         const web3Instance = new web3(provider);
 
