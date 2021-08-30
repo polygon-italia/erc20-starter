@@ -14,6 +14,15 @@ async function deploy() {
             configs.owner_address !== undefined
         ) {
 
+            // Read current gas price from gas station:
+            let gas_station
+            let gas_price = "1"
+            if (configs.network === 'mumbai') {
+                gas_station = 'https://gasstation-mumbai.matic.today'
+            } else if (configs.network === 'polygon') {
+                gas_station = 'https://gasstation-mainnet.matic.network'
+            }
+
             console.log('Removing existing build..')
             child_process.execSync('sudo rm -rf build')
 
@@ -23,7 +32,7 @@ async function deploy() {
             }
 
             console.log('Deploying contract..')
-            let out = child_process.execSync('sudo PROVIDER="' + configs.provider + '" MNEMONIC="' + configs.owner_mnemonic + '" OWNER="' + configs.owner_address + '" TICKER="' + configs.contract.ticker + '" NAME="' + configs.contract.name + '" DECIMALS="' + configs.contract.decimals + '" truffle deploy --network ' + configs.network + ' --reset', output)
+            let out = child_process.execSync('sudo PROVIDER="' + configs.provider + '" MNEMONIC="' + configs.owner_mnemonic + '" OWNER="' + configs.owner_address + '" TICKER="' + configs.contract.ticker + '" NAME="' + configs.contract.name + '" DECIMALS="' + configs.contract.decimals + '" GAS_PRICE="' + gas_price + '" truffle deploy --network ' + configs.network + ' --reset', output)
 
             // Extracting address
             out = out.toString()
