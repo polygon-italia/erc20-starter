@@ -1,0 +1,29 @@
+{
+    "name": "erc20-polygon-starter",
+    "version": "1.0.0",
+    "description": "Polygon ERC-20 Base Contract",
+    "main": "index.js",
+    "scripts": {
+        "extract-abi": "truffle-export-abi -d ./build/contracts/ -o ./abi.json -v",
+        "test": "truffle test",
+        "test:test": "node tests/test.js",
+        "test:mint": "node tests/mint.js",
+        "test:burn": "node tests/burn.js",
+        "test:transfer": "node tests/transfer.js",
+        "deploy:debug": "node deploy.js --debug=true",
+        "deploy": "node deploy.js"
+    },
+    "author": "turinglabsorg",
+    "license": "MIT",
+    "dependencies": {
+        "@openzeppelin/contracts": "^4.1.0",
+        "@truffle/hdwallet-provider": "^1.4.0",
+        "dotenv": "^10.0.0",
+        "web3": "^1.3.6"
+    },
+    "devDependencies": {
+        "eslint": "^6.8.0",
+        "solc": "^0.8.4",
+        "truffle-export-abi": "^1.0.1"
+    }
+}

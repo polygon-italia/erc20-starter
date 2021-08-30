@@ -1,0 +1,12 @@
+{
+    "network": "ganache",
+    "contract_address": "0x7412b9BcB4Eb744674FD7c6cE87CFD35928b89c9",
+    "owner_address": "0x692b340915Eb661CB3AD878Db4ca44B57Ea8Dc2a",
+    "owner_mnemonic": "level venue crew odor attack uncover flush steak club lumber pupil nerve",
+    "contract": {
+        "name": "Poly20",
+        "ticker": "POLY20",
+        "decimals": 18
+    },
+    "provider": "http://localhost:7545"
+}

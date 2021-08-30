@@ -1,0 +1,12 @@
+build/
+flattened/
+node_modules/
+.env*
+*.DS_Store
+.nvmrc
+eth/deploy.sh
+yarn-error.log
+deployed/
+.DS_Store
+configs/*
+!configs/ganache.json
