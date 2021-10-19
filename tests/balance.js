@@ -3,8 +3,8 @@ const web3 = require("web3");
 require('dotenv').config()
 const argv = require('minimist')(process.argv.slice(2));
 const fs = require('fs')
-const contract_name = argv._[0]
 const ABI = require('../abi.json')
+const BigNumber = require('big-number');
 
 async function main() {
     try {
@@ -19,11 +19,11 @@ async function main() {
             ABI,
             configs.contract_address, { gasLimit: "5000000" }
         );
-
         try {
-            console.log('Minting new tokens...')
-            const transfer = await contract.methods.transfer("0x7eDecB2FedD2378f18e42B302E22FA40FE0ddCD6", "35000000000000000000000").send({ from: configs.owner_address })
-            console.log(transfer)
+            const balance = await contract.methods.balanceOf("0x7eDecB2FedD2378f18e42B302E22FA40FE0ddCD6").call()
+            const division = BigNumber(10).pow(configs.contract.decimals)
+            const normalized = BigNumber(balance).divide(division.toString())
+            console.log('Balance is:', normalized.toString())
             process.exit();
         } catch (e) {
             console.log(e.message)

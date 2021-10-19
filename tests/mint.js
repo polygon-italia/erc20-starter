@@ -22,7 +22,7 @@ async function main() {
 
         try {
             console.log('Minting new tokens...')
-            const mint = await contract.methods.mint(configs.owner_address, 10000000).send({ from: configs.owner_address })
+            const mint = await contract.methods.mint(configs.owner_address, "35000000000000000000000000").send({ from: configs.owner_address })
             console.log(mint)
             process.exit();
         } catch (e) {

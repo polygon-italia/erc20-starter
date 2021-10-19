@@ -20,7 +20,6 @@ async function deploy() {
             console.log('Removing existing build..')
             child_process.execSync('sudo rm -rf build')
 
-
             console.log('Deploying contract..')
             child_process.execSync('sudo PROVIDER="' + configs.provider + '" MNEMONIC="' + configs.owner_mnemonic + '" OWNER="' + configs.owner_address + '" TICKER="' + configs.contract.ticker + '" NAME="' + configs.contract.name + '" DECIMALS="' + configs.contract.decimals + '" CONFIG="' + './configs/' + argv._ + '.json" GAS_PRICE="' + gas_price + '" truffle deploy --network ' + configs.network + ' --reset', { stdio: 'inherit' })
             

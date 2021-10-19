@@ -1,4 +1,5 @@
 const UMi20 = artifacts.require("./UMi20.sol");
+const fs = require('fs')
 
 module.exports = async (deployer) => {
     const name = process.env.NAME;
