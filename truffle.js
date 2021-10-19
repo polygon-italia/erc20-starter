@@ -11,24 +11,6 @@ module.exports = {
             gasPrice: 15000000000,
             network_id: "*", // Match any network id
         },
-        tbsc: {
-            provider: function() {
-                return new HDWalletProvider(process.env.MNEMONIC, process.env.PROVIDER);
-            },
-            confirmations: 2,
-            gasPrice: 10000000000,
-            network_id: "*",
-            networkCheckTimeout: 10000000
-        },
-        bsc: {
-            provider: function() {
-                return new HDWalletProvider(process.env.MNEMONIC, process.env.PROVIDER);
-            },
-            confirmations: 2,
-            gasPrice: 10000000000,
-            network_id: "*",
-            networkCheckTimeout: 10000000
-        },
         mumbai: {
             provider: () => new HDWalletProvider(process.env.MNEMONIC, process.env.PROVIDER),
             network_id: 80001,
@@ -44,6 +26,23 @@ module.exports = {
             timeoutBlocks: 200,
             gasPrice: "6000000000",
             skipDryRun: true
+        },
+        rinkeby: {
+          provider: () => new HDWalletProvider(process.env.MNEMONIC, process.env.PROVIDER),
+          network_id: 4,
+          confirmations: 2,
+          gasPrice: process.env.GAS_PRICE,
+          timeoutBlocks: 200,
+          skipDryRun: true
+        },
+        ethereum: {
+          provider: () => new HDWalletProvider(process.env.MNEMONIC, process.env.PROVIDER),
+          network_id: 1,
+          confirmations: 2,
+          timeoutBlocks: 200,
+          gas: 3000000,
+          gasPrice: process.env.GAS_PRICE,
+          skipDryRun: true
         }
     },
     mocha: {
