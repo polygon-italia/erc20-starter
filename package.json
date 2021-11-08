@@ -11,6 +11,7 @@
         "test:mint": "node tests/mint.js",
         "test:burn": "node tests/burn.js",
         "test:transfer": "node tests/transfer.js",
+        "test:approve": "node tests/approve.js",
         "deploy": "node deploy.js"
     },
     "author": "turinglabsorg",

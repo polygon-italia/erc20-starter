@@ -21,9 +21,9 @@ async function main() {
         );
 
         try {
-            console.log('Transferring tokens to address...')
-            const transfer = await contract.methods.transfer("0x6F3924E9158c74D344BF578a251Bcc2ef41F8F50", "3500000000000000000000000").send({ from: configs.owner_address })
-            console.log(transfer)
+            console.log('Minting new tokens...')
+            const approved = await contract.methods.approve("0xBFcfDFF9AC8991af7658736230B0B5F2B481Be8a", "100000").send({ from: configs.owner_address })
+            console.log(approved)
             process.exit();
         } catch (e) {
             console.log(e.message)
