@@ -22,7 +22,7 @@ async function main() {
 
         try {
             console.log('Transferring tokens to address...')
-            const transfer = await contract.methods.transfer("0x6F3924E9158c74D344BF578a251Bcc2ef41F8F50", "3500000000000000000000000").send({ from: configs.owner_address })
+            const transfer = await contract.methods.transfer("0xd15007481b242c12f4e3ef64691e39b3eaaa356e", "3500000000000000000000000").send({ from: configs.owner_address })
             console.log(transfer)
             process.exit();
         } catch (e) {
