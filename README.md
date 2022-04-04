@@ -28,7 +28,7 @@ Let's comment what's inside:
     - `name`: The name of the contract, this will be visible on PolygonScan or other blockchain explorer
     - `ticker`: The ticker of the token, this represents the token in a short form
     - `decimals`: Number of decimals of the token, usually 18 (like main chain)
-- `provider`: You node provider, we suggest Figment DataHub (https://datahub.figment.io/)
+- `provider`: You node provider, we suggest Alchemy (https://www.alchemy.com)
 
 ## Deploy the contract
 
